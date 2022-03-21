@@ -7,12 +7,12 @@
 		<h1 class="text-white p-4 font-weight-bold">메모 게시판</h1>
 	</div>
 	<div class="login-info">
-		<%-- session 정보가 있을 때만 출력 --%>
+		<!-- userName은 세션이 있을때만 출력된다. -->
 		<c:if test="${not empty userName}">
-		<div class="mt-5 mr-4">
-			<span class="text-white">마론달님 안녕하세요</span>
-			<a href="/user/sign_out" class="ml-2 text-white font-weight-bold">로그아웃</a>
-		</div>
+			<div class="mt-5 mr-4">
+				<span class="text-white">${userName}님 안녕하세요</span>
+				<a href="/user/sign_out" class="ml-2 text-white font-weight-bold">로그아웃</a>
+			</div>
 		</c:if>
 	</div>
 </div>
