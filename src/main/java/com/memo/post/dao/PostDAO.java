@@ -8,5 +8,5 @@ import com.memo.post.model.Post;
 
 @Repository
 public interface PostDAO {
-	public List<Post> selectPostList();
+	public List<Post> selectPostListByUserId(int userId);
 }

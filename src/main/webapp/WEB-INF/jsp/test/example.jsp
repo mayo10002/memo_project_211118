@@ -17,7 +17,7 @@
 <body>
 	<h1>Hello World!</h1>
 	
-	<div class="post-create-box" id="postCreateBox">
+	<div class="post-create-box" id="postCreateBox" class="container">
 		<textarea class="post-textarea" placeholder="무슨 일이 일어나고 있나요?"></textarea>
 		<div class="d-flex justify-content-between">
 		<img src="#" alt="이미지 삽입">

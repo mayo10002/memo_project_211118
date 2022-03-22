@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>메모 게시판</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
 
 <!-- bootstrap -->
@@ -16,13 +16,13 @@
 </head> 
 <body>
 	<div id="wrap">
-		<header class="bg-warning">
+		<header>
 			<jsp:include page="../include/gnb.jsp" />  <!-- 상대경로 -->
 		</header>
-		<section class="contents bg-primary">
+		<section class="contents">
 			<jsp:include page="../${viewName}.jsp" />
 		</section>
-		<footer class="bg-secondary">
+		<footer>
 			<jsp:include page="../include/footer.jsp" />
 		</footer>
 	</div>
