@@ -33,7 +33,7 @@
  	
  </insert>
  
- <select id="getUserByLoginIdAndPassword" parameterType="map" resultType="com.memo.user.model.User">
+ <select id="selectUserByLoginIdAndPassword" parameterType="map" resultType="com.memo.user.model.User">
  	SELECT 	
  		`id`
  		,`loginId`

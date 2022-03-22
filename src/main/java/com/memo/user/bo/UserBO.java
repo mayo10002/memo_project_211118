@@ -15,7 +15,7 @@ public class UserBO {
 	}
 	
 	public User getUserByLoginIdAndPassword(String loginId, String password) {
-		return userDAO.getUserByLoginIdAndPassword(loginId, password);
+		return userDAO.selectUserByLoginIdAndPassword(loginId, password);
 	}
 
 	public int addUser(String loginId, String password, String name, String email ) { // 옆의 password 생애주기는 이 안에서만. 그러니 encrypt를 쓸 필요는 없다.
