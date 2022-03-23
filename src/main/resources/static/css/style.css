@@ -3,6 +3,3 @@
 header {height:100px; background-color:#ddd;}
 .contents{min-height:500px;}
 footer {height:100px;}
-
-.post-create-box{border:1px solid gray; border-radius: 2px;}
-.post-textarea{  height:100px; resize:none; border:none;}

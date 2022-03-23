@@ -20,6 +20,8 @@
 	<div class="post-create-box" id="postCreateBox" class="container">
 		<textarea class="post-textarea" placeholder="무슨 일이 일어나고 있나요?"></textarea>
 		<div class="d-flex justify-content-between">
+		<input type="file" id="file" class="d-none" accept=".gif,.jpg,.jpeg,.png">
+		<a href="#" id="file">
 		<img src="#" alt="이미지 삽입">
 		<button type="button" class="btn btn-success">게시</button>
 		</div>
