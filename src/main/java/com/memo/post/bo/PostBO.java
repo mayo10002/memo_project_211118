@@ -20,6 +20,9 @@ public class PostBO {
 	public List<Post> getPostListByUserId(int userId){
 		return postDAO.selectPostListByUserId(userId);
 	}
+	public Post getPostById(int postId) {
+		return postDAO.selectPostById(postId);
+	}
 	public int addPost(String loginId, int userId, String subject, String content, 
 			MultipartFile file) {
 		String imagePath = null ; 
@@ -32,6 +35,5 @@ public class PostBO {
 			}
 		}
 		return postDAO.insertPost(userId, subject, content, imagePath);
-		
 	}
 }
