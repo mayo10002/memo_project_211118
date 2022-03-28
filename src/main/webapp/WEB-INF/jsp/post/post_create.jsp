@@ -48,8 +48,8 @@ $(document).ready(function(){
 		}
 		
 		// 콘솔로 값이 들어있는 지 확인
-		console.log(subject);
-		console.log(content);
+		/* console.log(subject);
+		console.log(content); */
 		
 		// 파일이 업로드 된 경우 확장자 체크
 		let fileName = $('input[name=file]').val();
