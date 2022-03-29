@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -71,6 +72,22 @@ public class PostsRestController {
 				result.put("result", "error");
 				result.put("error_message", "수정에 실패했습니다. 다시 시도해주세요.");
 			}
+		return result;
+	}
+	
+	@DeleteMapping("/delete")
+	public Map<String, Object> delete (
+			@RequestParam ("postId")int postId
+			,HttpSession session){
+		int userId = (int)session.getAttribute("userId");
+		//db
+		int row = postBO.deletePost(postId, userId);
+		Map<String, Object> result = new HashMap<>();
+		result.put("result", "success");
+		if(row < 1) {
+			result.put("result", "error");
+			result.put("error_message", "삭제 실패했습니다. 다시 시도해주세요.");
+		}
 		return result;
 	}
 }

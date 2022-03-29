@@ -20,7 +20,7 @@
 		</c:if>
 		
 		<div class="clearfix mt-5">
-			<button type="button" id="postDeleteBtn" class="btn btn-secondary">삭제</button>
+			<button type="button" id="postDeleteBtn" class="btn btn-secondary" data-post-id="${post.id}">삭제</button>
 			<div class="float-right">
 				<button type="button" id="postListBtn" class="btn btn-secondary">목록</button>
 				<button type="button" id="saveBtn" class="btn btn-primary" data-post-id="${post.id}">수정</button>
@@ -31,6 +31,28 @@
 
 <script>
 $(document).ready(function(){
+	//삭제 버튼 클릭
+	$('#postDeleteBtn').on('click',function(){
+		let postId = $(this).data('post-id');
+		//alert('검증');
+		
+		$.ajax({
+			type:"delete"
+			,url:"/post/delete"
+			,data : {"postId":postId}
+			,success : function(data){
+				if(data.result== "success"){
+					alert("삭제되었습니다.");
+					location.href = "/post/post_list_view";
+				}else{
+					alert(data.error_message);
+				}
+			}
+			, error: function(e){
+				alert("메모를 삭제하는 데 실패했습니다. 관리자에게 문의해주세요.");
+			}
+		});
+	});
 	//목록 버튼 클릭
 	$('#postListBtn').on('click',function(){
 		location.href="/post/post_list_view";
